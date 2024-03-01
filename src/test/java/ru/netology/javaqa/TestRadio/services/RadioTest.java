@@ -6,6 +6,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
     @Test
+    public void testDefaultConstructor() {
+        Radio radio = new Radio();
+        assertEquals(10, radio.getMaxStations());
+    }
+
+    @Test
+    public void testCustomConstructor() {
+        Radio radio = new Radio(20);
+        assertEquals(20, radio.getMaxStations());
+    }
+
+    @Test
     public void testSetValidStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);

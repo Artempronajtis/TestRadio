@@ -1,10 +1,18 @@
 package ru.netology.javaqa.TestRadio.services;
 
 public class Radio {
+    private int maxStations;
     private int currentStation;
     private int volume;
 
     public Radio() {
+        this.maxStations = 10;
+        this.currentStation = 0;
+        this.volume = 50;
+    }
+
+    public Radio(int maxStations) {
+        this.maxStations = maxStations;
         this.currentStation = 0;
         this.volume = 50;
     }
@@ -14,11 +22,15 @@ public class Radio {
     }
 
     public void setCurrentStation(int station) {
-        if (station >= 0 && station <= 9) {
+        if (station >= 0 && station < maxStations) {
             this.currentStation = station;
         } else {
             System.out.println("Недопустимый номер радиостанции");
         }
+    }
+
+    public int getMaxStations() {
+        return maxStations;
     }
 
     public int getVolume() {
