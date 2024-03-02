@@ -63,5 +63,15 @@ public class Radio {
             currentStation--;
         }
     }
+
+    public void setVolume(int volume) {
+        if (volume >= 0 && volume <= 100) {
+            this.volume = volume;
+        } else {
+            System.out.println("Недопустимое значение громкости");
+        }
+    }
+
+
 }
 
