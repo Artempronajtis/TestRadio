@@ -118,13 +118,13 @@ public class RadioTest {
     public void testSetVolumeBelowRange() {
         Radio radio = new Radio();
         radio.setVolume(-10);
-        assertEquals(50, radio.getVolume());
+        assertEquals(50, radio.getVolume());// Громкость не должна измениться
     }
 
     @Test
     public void testSetVolumeAboveRange() {
         Radio radio = new Radio();
         radio.setVolume(110);
-        assertEquals(50, radio.getVolume());
+        assertEquals(50, radio.getVolume());// Громкость не должна измениться
     }
 }
