@@ -5,10 +5,9 @@ public class Radio {
     private int currentStation;
     private int volume;
 
+
     public Radio() {
-        this.maxStations = 10;
-        this.currentStation = 0;
-        this.volume = 50;
+        this(10);
     }
 
     public Radio(int maxStations) {
