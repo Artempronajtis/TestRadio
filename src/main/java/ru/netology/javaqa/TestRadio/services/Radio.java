@@ -1,19 +1,20 @@
 package ru.netology.javaqa.TestRadio.services;
 
 public class Radio {
-    private int maxStations;
     private int currentStation;
+    private int maxStations;
     private int volume;
+
+
+    public Radio(int maxStations) {
+        this.maxStations = maxStations - 1;
+        this.currentStation = 0;
+        this.volume = 50;
+    }
 
 
     public Radio() {
         this(10);
-    }
-
-    public Radio(int maxStations) {
-        this.maxStations = maxStations;
-        this.currentStation = 0;
-        this.volume = 50;
     }
 
     public int getCurrentStation() {
@@ -21,7 +22,7 @@ public class Radio {
     }
 
     public void setCurrentStation(int station) {
-        if (station >= 0 && station < maxStations) {
+        if (station >= 0 && station <= maxStations) {
             this.currentStation = station;
         } else {
             System.out.println("Недопустимый номер радиостанции");
@@ -29,7 +30,7 @@ public class Radio {
     }
 
     public int getMaxStations() {
-        return maxStations;
+        return maxStations + 1;
     }
 
     public int getVolume() {
@@ -49,7 +50,7 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (currentStation == 9) {
+        if (currentStation == maxStations) {
             currentStation = 0;
         } else {
             currentStation++;
@@ -58,15 +59,15 @@ public class Radio {
 
     public void prevStation() {
         if (currentStation == 0) {
-            currentStation = 9;
+            currentStation = maxStations;
         } else {
             currentStation--;
         }
     }
 
-    public void setVolume(int volume) {
-        if (volume >= 0 && volume <= 100) {
-            this.volume = volume;
+    public void setVolume(int volumeLevel) {
+        if (volumeLevel >= 0 && volumeLevel <= 100) {
+            this.volume = volumeLevel;
         } else {
             System.out.println("Недопустимое значение громкости");
         }
@@ -74,4 +75,7 @@ public class Radio {
 
 
 }
+
+
+
 
