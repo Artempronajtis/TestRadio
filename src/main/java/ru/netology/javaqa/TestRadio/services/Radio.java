@@ -7,7 +7,8 @@ public class Radio {
 
 
     public Radio(int maxStations) {
-        this.maxStations = maxStations - 1;
+        int countStations = 10;
+        this.maxStations = countStations - 1;
         this.currentStation = 0;
         this.volume = 50;
     }
