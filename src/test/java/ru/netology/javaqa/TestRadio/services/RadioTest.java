@@ -4,6 +4,7 @@ package ru.netology.javaqa.TestRadio.services;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class RadioTest {
 
@@ -133,6 +134,13 @@ public class RadioTest {
         radio.setCurrentStation(0);
         radio.prevStation();
         assertEquals(9, radio.getCurrentStation());
+    }
+
+    @Test
+    public void testSetInvalidStation() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(15);
+        assertNotEquals(15, radio.getCurrentStation());
     }
 
 
