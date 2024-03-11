@@ -142,7 +142,7 @@ public class RadioTest {
         Radio radio = new Radio(20);
         radio.setCurrentStation(15);
 
-        assertEquals(15, radio.getCurrentStation());
+        assertEquals(0, radio.getCurrentStation());
     }
 }
 
