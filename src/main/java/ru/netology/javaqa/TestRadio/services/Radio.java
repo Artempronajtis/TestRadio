@@ -1,16 +1,17 @@
 package ru.netology.javaqa.TestRadio.services;
 
 public class Radio {
+
     private int currentStation;
     private int maxStations;
     private int volume;
-
 
     public Radio(int maxStations) {
         int countStations = 10;
         this.maxStations = countStations - 1;
         this.currentStation = 0;
         this.volume = 50;
+
     }
 
 
@@ -73,8 +74,6 @@ public class Radio {
             System.out.println("Недопустимое значение громкости");
         }
     }
-
-
 }
 
 
