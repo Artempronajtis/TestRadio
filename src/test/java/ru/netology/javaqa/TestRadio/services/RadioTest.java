@@ -9,15 +9,45 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setCurrentStation(8);
+
+        int actual = radio.getCurrentStation();
+        int expected = 8;
+
+        Assertions.assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void setCurrentStationWithTwentyStations() {
+        Radio radio = new Radio(20);
+
         radio.setCurrentStation(15);
+
         int actual = radio.getCurrentStation();
         int expected = 15;
+
+        Assertions.assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void setCurrentStationOverMaximum() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStation(8);
+        radio.setCurrentStation(15);
+
+        int actual = radio.getCurrentStation();
+        int expected = 8;
 
 
         Assertions.assertEquals(expected, actual);
 
 
     }
+
 
     @Test
     public void setCurrentStationUnderMinimum() {

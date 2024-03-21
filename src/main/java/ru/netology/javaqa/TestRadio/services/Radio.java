@@ -7,7 +7,7 @@ public class Radio {
     private int volume;
 
     public Radio() {
-        this.stationLimit = 20;
+        this.stationLimit = 10;
     }
 
     public Radio(int stationLimit) {
@@ -19,13 +19,13 @@ public class Radio {
         return currentStation;
     }
 
-    public int setCurrentStation(int newCurrentStation) {
+    public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < stationLimit) {
             if (newCurrentStation >= 0) {
                 this.currentStation = newCurrentStation;
             }
         }
-        return this.currentStation;
+
     }
 
     public void nextStation() {
