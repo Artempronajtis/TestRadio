@@ -1,77 +1,72 @@
 package ru.netology.javaqa.TestRadio.services;
 
 public class Radio {
-    private int maxStations;
+
     private int currentStation;
+    private int stationLimit;
     private int volume;
 
-
     public Radio() {
-        this(10);
+        this.stationLimit = 10;
     }
 
-    public Radio(int maxStations) {
-        this.maxStations = maxStations;
-        this.currentStation = 0;
-        this.volume = 50;
+    public Radio(int stationLimit) {
+        this.stationLimit = stationLimit;
     }
+
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public void setCurrentStation(int station) {
-        if (station >= 0 && station < maxStations) {
-            this.currentStation = station;
-        } else {
-            System.out.println("Недопустимый номер радиостанции");
+    public void setCurrentStation(int newCurrentStation) {
+        if (newCurrentStation < stationLimit) {
+            if (newCurrentStation >= 0) {
+                this.currentStation = newCurrentStation;
+            }
         }
-    }
 
-    public int getMaxStations() {
-        return maxStations;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void increaseVolume() {
-        if (volume < 100) {
-            volume++;
-        }
-    }
-
-    public void decreaseVolume() {
-        if (volume > 0) {
-            volume--;
-        }
     }
 
     public void nextStation() {
-        if (currentStation == 9) {
+        if (currentStation == stationLimit - 1) {
             currentStation = 0;
         } else {
             currentStation++;
         }
     }
 
+
     public void prevStation() {
         if (currentStation == 0) {
-            currentStation = 9;
+            currentStation = stationLimit - 1;
         } else {
             currentStation--;
         }
     }
 
-    public void setVolume(int volume) {
-        if (volume >= 0 && volume <= 100) {
-            this.volume = volume;
-        } else {
-            System.out.println("Недопустимое значение громкости");
+    public int getCurrentVolume() {
+        return volume;
+    }
+
+    public void IncreaseVolume() {
+        if (volume < 100) {
+            volume++;
         }
     }
 
+    public void DecreaseVolume() {
+        if (volume > 0) {
+            volume--;
+        }
+    }
 
 }
+
+
+
+
+
+
+
 
